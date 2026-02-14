@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+
+  /* Deep Navy Background */
+  --background: 215 30% 17%;
+  /* Light text for contrast */
+  --foreground: 0 0% 100%;
+
+  /* Sunset Orange */
+  --primary: 12 100% 64%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Gold */
+  --secondary: 45 100% 64%;
+  --secondary-foreground: 215 30% 17%;
+
+  /* Charcoal */
+  --muted: 212 33% 21%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 12 100% 64%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 215 20% 30%;
+  --input: 215 20% 30%;
+  --ring: 12 100% 64%;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-400 to-secondary;
+  }
+  .bg-glass {
+    @apply bg-background/80 backdrop-blur-md border border-white/10;
+  }
+}
